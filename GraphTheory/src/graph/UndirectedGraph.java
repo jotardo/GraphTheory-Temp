@@ -1,8 +1,11 @@
 package graph;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class UndirectedGraph extends AGraph {
 
-	/*Loop counts as 2 here*/
+	/* Loop counts as 2 here */
 	public UndirectedGraph(int num) {
 		super(num);
 	}
@@ -52,14 +55,6 @@ public class UndirectedGraph extends AGraph {
 			for (int column = 0; column < this.adjMatrix[row].length; column++)
 				result += this.adjMatrix[row][column];
 		return result / 2;
-	}
-	
-	public boolean isBipartiteGraph() {
-		for (int row = 0; row < this.adjMatrix.length; row++)
-			for (int column = 0; column < this.adjMatrix[row].length; column++)
-				if (this.adjMatrix[row][column] == 2)
-					return false;
-		throw new NoSuchMethodError("This method is NOT completed");
 	}
 
 }

@@ -87,7 +87,7 @@ public abstract class AGraph {
 					break;
 				}
 			}
-			if (i >= this.maxVertex)
+			if (i >= this.maxVertex) 
 				stack.pop();
 			
 		}
@@ -143,7 +143,7 @@ public abstract class AGraph {
 		return false;
 	}
 	
-	public int numOfSmallConnectedGraph() {
+	public int numOfConnectedSubgraph() {
 		Queue<Integer> q = new LinkedList<Integer>();
 		boolean[] visited = new boolean[this.maxVertex];
 		LinkedList<Integer> visitedVertex = new LinkedList<Integer>();
@@ -171,6 +171,12 @@ public abstract class AGraph {
 			result++;
 		}
 		return result;
+	}
+
+	public boolean isBipartiteGraph() {
+		if (!isSimpleGraph())
+			return false;
+		return true;
 	}
 	
 }
